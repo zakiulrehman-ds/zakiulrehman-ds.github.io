@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaki Ul Rehman — Data Analyst & Data Scientist</title>
+<meta name="description" content="Portfolio of Zaki Ul Rehman, Data Analyst & Data Scientist specializing in SQL, Python, Power BI, and Machine Learning.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles-modern.css">
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<style>
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0A0E17;
+  }
+
+  .mono-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    font-weight: 500;
+  }
+
+  /* Blurred gradient mesh blobs for background depth */
+  .mesh-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(90px);
+    opacity: 0.45;
+    pointer-events: none;
+  }
+
+  .gradient-text {
+    background: linear-gradient(90deg, #22D3EE 0%, #A78BFA 50%, #F472B6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(14px);
+  }
+
+  .glass-card {
+    background: rgba(255,255,255,0.035);
+    border: 1px solid rgba(255,255,255,0.09);
+    backdrop-filter: blur(14px);
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  }
+  .glass-card:hover {
+    background: rgba(255,255,255,0.06);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(34, 211, 238, 0.25);
+  }
+
+  .cat-ds { border-top: 2px solid #22D3EE; }
+  .cat-da { border-top: 2px solid #FBBF24; }
+  .cat-web { border-top: 2px solid #F472B6; }
+
+  .btn-gradient {
+    background: linear-gradient(90deg, #22D3EE 0%, #A78BFA 100%);
+  }
+  .btn-gradient:hover {
+    background: linear-gradient(90deg, #67E8F9 0%, #C4B5FD 100%);
+  }
+
+  .nav-link {
+    position: relative;
+    color: rgba(255,255,255,0.65);
+  }
+  .nav-link:hover, .nav-link.active {
+    color: #ffffff;
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 100%;
+    bottom: -4px;
+    height: 2px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #22D3EE, #A78BFA);
+    transition: right 0.2s ease;
+  }
+  .nav-link:hover::after, .nav-link.active::after { right: 0; }
+
+  .skill-chip {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+  }
+  .skill-chip:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.08);
+  }
+
+  .filter-btn {
+    transition: all 0.15s ease;
+    color: rgba(255,255,255,0.6);
+  }
+  .filter-btn.active {
+    background: linear-gradient(90deg, #22D3EE, #A78BFA);
+    color: #0A0E17;
+    font-weight: 600;
+    border-color: transparent;
+  }
+
+  .view-link { transition: gap 0.2s ease; }
+  .glass-card:hover .view-link { gap: 0.5rem; }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: reveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+  .reveal-1 { animation-delay: 0.05s; }
+  .reveal-2 { animation-delay: 0.18s; }
+  .reveal-3 { animation-delay: 0.31s; }
+  .reveal-4 { animation-delay: 0.44s; }
+  .reveal-5 { animation-delay: 0.35s; }
+  @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .glass-card, .skill-chip, .nav-link::after { transition: none; }
+    .reveal { animation: none; opacity: 1; transform: none; }
+  }
+
+  ::selection { background: #A78BFA; color: #0A0E17; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #22D3EE;
+    outline-offset: 2px;
+  }
+</style>
+</head>
+
+<body class="text-white/90 font-sans antialiased">
+
+<!-- ============ NAV ============ -->
+<header class="sticky top-0 z-50 glass">
+  <nav class="max-w-5xl mx-auto px-6 flex items-center justify-between h-16">
+    <a href="#top" class="font-display text-lg font-semibold tracking-tight text-white">Zaki Ul Rehman</a>
+
+    <div class="hidden md:flex items-center gap-8 text-base font-medium">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#contact" class="ml-2 px-4 py-2 btn-gradient text-[#0A0E17] rounded-lg text-sm font-semibold transition-colors">Contact</a>
+    </div>
+
+    <button id="menuBtn" class="md:hidden p-2 text-white" aria-label="Open menu" aria-expanded="false">
+      <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </nav>
+
+  <div id="mobileMenu" class="hidden md:hidden border-t border-white/10">
+    <div class="px-6 py-4 flex flex-col gap-4 text-base">
+      <a href="#about" class="mobile-link text-white/80">About</a>
+      <a href="#experience" class="mobile-link text-white/80">Experience</a>
+      <a href="#projects" class="mobile-link text-white/80">Projects</a>
+      <a href="#skills" class="mobile-link text-white/80">Skills</a>
+      <a href="#contact" class="mobile-link font-semibold gradient-text">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative overflow-hidden">
+  <div class="mesh-blob w-[420px] h-[420px] bg-cyan-400 -top-32 -left-24"></div>
+  <div class="mesh-blob w-[380px] h-[380px] bg-violet-500 top-20 right-0"></div>
+  <div class="mesh-blob w-[320px] h-[320px] bg-pink-400 bottom-0 left-1/3"></div>
+
+  <div class="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-28 md:pb-24 grid md:grid-cols-5 gap-10 items-center relative">
+    <div class="md:col-span-3">
+      <p class="reveal reveal-1 mono-tag text-cyan-300 uppercase mb-4">Sialkot, Punjab, Pakistan</p>
+      <h1 class="reveal reveal-2 font-display text-5xl md:text-7xl leading-[1.05] font-bold text-white">
+        Turning raw data into <span class="gradient-text">decisions</span> people can act on.
+      </h1>
+      <p class="reveal reveal-3 mt-6 text-white/65 max-w-xl leading-relaxed text-lg md:text-xl">
+        Data Analyst &amp; Data Scientist working across SQL, Python, and Power BI —
+        cleaning messy datasets, building models, and shipping dashboards that hold up
+        under real questions.
+      </p>
+      <div class="reveal reveal-4 mt-8 flex flex-wrap gap-3">
+        <a href="#projects" class="px-5 py-3 btn-gradient text-[#0A0E17] rounded-lg text-sm font-semibold transition-colors">View projects</a>
+        <a href="mailto:zakiulrehman.ds@gmail.com" class="px-5 py-3 glass rounded-lg text-sm font-medium text-white hover:border-cyan-300/50 transition-colors">Get in touch</a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-5 md:col-span-2">
+      <div class="glass-card rounded-2xl p-6">
+        <svg viewBox="0 0 320 220" class="w-full h-auto" role="img" aria-label="Illustrative data chart">
+          <defs>
+            <linearGradient id="barGrad1" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#22D3EE"/>
+              <stop offset="100%" stop-color="#0E7C86"/>
+            </linearGradient>
+            <linearGradient id="barGrad2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#F472B6"/>
+              <stop offset="100%" stop-color="#A78BFA"/>
+            </linearGradient>
+          </defs>
+          <line x1="20" y1="20" x2="20" y2="190" stroke="#FFFFFF" stroke-opacity="0.15"/>
+          <line x1="20" y1="190" x2="300" y2="190" stroke="#FFFFFF" stroke-opacity="0.15"/>
+          <rect x="40" y="140" width="26" height="50" fill="url(#barGrad1)" opacity="0.9" rx="3"/>
+          <rect x="80" y="110" width="26" height="80" fill="url(#barGrad1)" opacity="0.9" rx="3"/>
+          <rect x="120" y="150" width="26" height="40" fill="url(#barGrad1)" opacity="0.5" rx="3"/>
+          <rect x="160" y="90" width="26" height="100" fill="url(#barGrad2)" rx="3"/>
+          <rect x="200" y="120" width="26" height="70" fill="url(#barGrad1)" opacity="0.75" rx="3"/>
+          <polyline points="53,130 93,95 133,135 173,70 213,105 253,60" fill="none" stroke="#ffffff" stroke-width="2"/>
+          <circle cx="173" cy="70" r="4" fill="#F472B6"/>
+          <circle cx="253" cy="60" r="4" fill="#22D3EE"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/10">
+    <div class="max-w-5xl mx-auto px-6 py-6 flex flex-wrap gap-x-12 gap-y-3">
+      <div class="flex items-baseline gap-2">
+        <span class="font-display text-2xl font-bold gradient-text">7</span>
+        <span class="mono-tag text-white/45 uppercase">Projects</span>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="font-display text-2xl font-bold gradient-text">3</span>
+        <span class="mono-tag text-white/45 uppercase">Roles</span>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="font-display text-2xl font-bold gradient-text">5</span>
+        <span class="mono-tag text-white/45 uppercase">Certifications</span>
+      </div>
+      <div class="flex items-baseline gap-2">
+        <span class="font-display text-2xl font-bold gradient-text">10+</span>
+        <span class="mono-tag text-white/45 uppercase">Tools &amp; Languages</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="max-w-5xl mx-auto px-6 py-16 md:py-20 border-t border-white/10">
+  <p class="mono-tag text-cyan-300 uppercase mb-3">About</p>
+  <p class="font-display text-3xl md:text-5xl leading-[1.15] max-w-3xl font-semibold text-white">
+    Data professional using SQL, Python, and dashboarding tools to clean data,
+    explore patterns, and translate analysis into clear findings.
+  </p>
+  <p class="mt-6 text-white/60 max-w-2xl leading-relaxed text-lg md:text-xl">
+    Builds end-to-end projects across data preparation, exploratory analysis, regression, and
+    classification, with additional exposure to database management and SQL query optimization
+    from an IT internship. Brings a practical mix of analytical rigor and visual reporting that
+    supports clearer decisions from complex datasets.
+  </p>
+</section>
+
+<!-- ============ EXPERIENCE ============ -->
+<section id="experience" class="border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+    <p class="mono-tag text-cyan-300 uppercase mb-8">Experience</p>
+
+    <div class="space-y-6">
+      <div class="glass-card rounded-2xl p-6 md:p-8 grid md:grid-cols-4 gap-3 md:gap-8">
+        <div class="md:col-span-1 text-white/40 text-sm font-mono">Feb 2026 — Present</div>
+        <div class="md:col-span-3">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Marketing Analytics Specialist <span class="text-white/40 font-sans text-base font-normal">(Freelance) · Wear Xcel</span></h3>
+          <ul class="mt-3 space-y-2 text-white/60 text-base leading-relaxed list-disc list-inside">
+            <li>Managed 3 campaign optimizations per month in Meta Ads Manager for an e-commerce client, configuring audience segmentation, lookalike, and retargeting setups.</li>
+            <li>Ran structured A/B tests on ad creatives and messaging to improve click-through and conversion performance.</li>
+            <li>Tracked campaign results in Excel and Power BI, turning reporting into clear optimization decisions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 md:p-8 grid md:grid-cols-4 gap-3 md:gap-8">
+        <div class="md:col-span-1 text-white/40 text-sm font-mono">Jul 2026 — Present</div>
+        <div class="md:col-span-3">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Marketing Analytics &amp; Content Associate <span class="text-white/40 font-sans text-base font-normal">· Acuren Surgical</span></h3>
+          <ul class="mt-3 space-y-2 text-white/60 text-base leading-relaxed list-disc list-inside">
+            <li>Manage Facebook and Instagram pages for a surgical instrument export brand, including a structured content calendar (Reels, carousels, product spotlights).</li>
+            <li>Create and schedule content posts to support brand presence ahead of ad campaign launches.</li>
+            <li>Read and report on Meta ad analytics to support marketing decisions.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-6 md:p-8 grid md:grid-cols-4 gap-3 md:gap-8">
+        <div class="md:col-span-1 text-white/40 text-sm font-mono">Aug — Oct 2024</div>
+        <div class="md:col-span-3">
+          <h3 class="font-display text-xl md:text-2xl font-semibold text-white">IT Intern <span class="text-white/40 font-sans text-base font-normal">— Networking, Database Management &amp; SQL Development · Opal Marketing &amp; Industry LLC, Muscat</span></h3>
+          <ul class="mt-3 space-y-2 text-white/60 text-base leading-relaxed list-disc list-inside">
+            <li>Wrote SQL queries to support internal reporting needs and improve access to operational data.</li>
+            <li>Optimized query performance through routine indexing and query tuning under IT supervision.</li>
+            <li>Generated executive reports in Power BI to support internal decision-making.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section id="projects" class="border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-4 mb-3">
+      <p class="mono-tag text-cyan-300 uppercase">Technical Projects</p>
+      <div class="flex gap-2 text-sm" id="filterBar">
+        <button class="filter-btn active px-3 py-1.5 rounded-lg border border-white/15" data-filter="all">All</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15" data-filter="ds">Data Science</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15" data-filter="da">Data Analytics</button>
+        <button class="filter-btn px-3 py-1.5 rounded-lg border border-white/15" data-filter="web">Web Dev</button>
+      </div>
+    </div>
+    <p class="text-white/40 text-sm mb-8">Click any project to open the real file — notebook, dashboard, or schema.</p>
+
+    <div class="grid md:grid-cols-2 gap-5" id="projectGrid">
+
+      <a href="projects/housing-price-prediction.html" target="_blank" rel="noopener" class="glass-card cat-ds group block rounded-2xl p-6" data-cat="ds">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-cyan-400/10 text-cyan-300">Data Science</span>
+          <span class="mono-tag text-white/35">Python · Scikit-learn</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">California Housing Price Prediction</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Cleaned and engineered features (rooms/bedrooms/population per household) from a
+          real estate dataset; encoded categorical variables. Trained and compared Linear
+          Regression, Ridge Regression, and Random Forest models, evaluating performance
+          with MAE, RMSE, and R² to select the best-fitting model.
+        </p>
+        <span class="view-link mt-4 inline-flex items-center gap-1 text-cyan-300 font-semibold text-sm">
+          Open notebook <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </a>
+
+      <a href="projects/credit-card-fraud-detection.html" target="_blank" rel="noopener" class="glass-card cat-ds group block rounded-2xl p-6" data-cat="ds">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-cyan-400/10 text-cyan-300">Data Science</span>
+          <span class="mono-tag text-white/35">Python · Scikit-learn</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Credit Card Fraud Detection</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Built a Logistic Regression classifier on a highly imbalanced transaction dataset,
+          using stratified train/test splitting to preserve class ratios. Evaluated performance
+          using confusion matrix and classification report; identified class imbalance as the
+          key limitation and applied class-weighting to address it.
+        </p>
+        <span class="view-link mt-4 inline-flex items-center gap-1 text-cyan-300 font-semibold text-sm">
+          Open notebook <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </a>
+
+      <a href="projects/retail-data-cleaning-eda.html" target="_blank" rel="noopener" class="glass-card cat-da group block rounded-2xl p-6" data-cat="da">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-amber-400/10 text-amber-300">Data Analytics</span>
+          <span class="mono-tag text-white/35">Python · Pandas · Seaborn</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Retail Customer Data Cleaning &amp; EDA</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Cleaned inconsistent categorical data, imputed missing values, detected outliers
+          (IQR method), engineered features (Avg_Item_Cost, Age_Group), and visualized
+          spending patterns across customer segments.
+        </p>
+        <span class="view-link mt-4 inline-flex items-center gap-1 text-amber-300 font-semibold text-sm">
+          Open notebook <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </span>
+      </a>
+
+      <a href="projects/personal-finance-investment-dashboard.xlsx" download class="glass-card cat-da group block rounded-2xl p-6" data-cat="da">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-amber-400/10 text-amber-300">Data Analytics</span>
+          <span class="mono-tag text-white/35">Excel</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Personal Finance &amp; Investment Behavior Dashboard</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Built pivot-based breakdowns of investment behavior (gold, mutual funds, fixed
+          deposits, bonds) segmented by gender and stated financial objectives.
+        </p>
+        <span class="view-link mt-4 inline-flex items-center gap-1 text-amber-300 font-semibold text-sm">
+          Download .xlsx <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+        </span>
+      </a>
+
+      <a href="projects/credit-card-customer-dashboard.pbix" download class="glass-card cat-da group block rounded-2xl p-6" data-cat="da">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-amber-400/10 text-amber-300">Data Analytics</span>
+          <span class="mono-tag text-white/35">Power BI</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Credit Card Customer Analytics Dashboard</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Built an interactive Power BI report analyzing customer revenue, interest earned,
+          and transaction activity across age, income, education, job, and marital status.
+        </p>
+        <span class="view-link mt-4 inline-flex items-center gap-1 text-amber-300 font-semibold text-sm">
+          Download .pbix <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+        </span>
+      </a>
+
+      <a href="projects/student-management-system.sql" download class="glass-card cat-da group block rounded-2xl p-6" data-cat="da">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-amber-400/10 text-amber-300">Data Analytics</span>
+          <span class="mono-tag text-white/35">Oracle SQL</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Student Management System</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Designed a normalized relational schema (Departments, Students, Courses, Enrollments)
+          with primary/foreign keys and constraints; implemented CRUD, aggregate queries, and
+          INNER/LEFT/RIGHT JOINs.
+        </p>
+        <span class="view-link mt-4 inline-flex items-center gap-1 text-amber-300 font-semibold text-sm">
+          Download .sql <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+        </span>
+      </a>
+
+      <article class="glass-card cat-web rounded-2xl p-6 md:col-span-2" data-cat="web">
+        <div class="flex flex-wrap items-center gap-2 mb-3">
+          <span class="mono-tag px-2 py-0.5 rounded bg-pink-400/10 text-pink-300">Web Dev</span>
+          <span class="mono-tag text-white/35">Laravel · MySQL</span>
+        </div>
+        <h3 class="font-display text-xl md:text-2xl font-semibold text-white">Digital Bus Station</h3>
+        <p class="mt-3 text-base text-white/60 leading-relaxed">
+          Customized and deployed a full-stack bus ticket booking platform automating
+          real-time scheduling and seat allocation. Final year capstone project, Govt. Murray
+          Graduate College.
+        </p>
+        <span class="mt-4 inline-block text-white/35 text-sm italic">Not currently live-hosted — code available on request</span>
+      </article>
+
+    </div>
+
+    <p class="mt-8 text-sm text-white/40">
+      More work and code on
+      <a href="https://github.com/zakiulrehman-ds" target="_blank" rel="noopener" class="text-cyan-300 hover:text-pink-300 underline underline-offset-2">github.com/zakiulrehman-ds</a>.
+    </p>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section id="skills" class="border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20">
+    <p class="mono-tag text-cyan-300 uppercase mb-8">Core Skills</p>
+
+    <div class="grid md:grid-cols-2 gap-x-10 gap-y-8">
+      <div>
+        <h4 class="font-display text-xl font-semibold mb-4 text-white">Technical Skills</h4>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">SQL</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Python</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Power BI</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Tableau</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Excel</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">BigQuery</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Matplotlib</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Seaborn</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">NumPy</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Pandas</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display text-xl font-semibold mb-4 text-white">Analytics &amp; Modeling</h4>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Data Modeling</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Predictive Modeling</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Statistics</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">EDA</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display text-xl font-semibold mb-4 text-white">Machine Learning</h4>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Scikit-learn</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Feature Engineering</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Regression Analysis</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Classification Modeling</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="font-display text-xl font-semibold mb-4 text-white">Marketing Analytics</h4>
+        <div class="flex flex-wrap gap-2">
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Meta Ads Manager</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">DAX</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Power Query</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Attribution Analysis</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">A/B Testing</span>
+          <span class="skill-chip mono-tag px-3 py-1.5 rounded-lg text-sm text-white/80">Campaign Reporting</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EDUCATION + CERTIFICATIONS ============ -->
+<section class="border-t border-white/10">
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12">
+    <div>
+      <p class="mono-tag text-cyan-300 uppercase mb-6">Education</p>
+      <h3 class="font-display text-lg font-semibold text-white">Bachelor of Science, Information Technology</h3>
+      <p class="text-sm text-white/50 mt-1">University of Gujrat, Pakistan · May 2026</p>
+    </div>
+
+    <div>
+      <p class="mono-tag text-cyan-300 uppercase mb-6">Certifications</p>
+      <ul class="space-y-3 text-sm text-white/65">
+        <li>Data Science, Professional Certification — Dev Valley Gujranwala (PSDF) <span class="text-white/35 font-mono text-xs">09/2026</span></li>
+        <li>Full Stack Web Development, Professional Training — Theta Solutions <span class="text-white/35 font-mono text-xs">07/2026</span></li>
+        <li>Advanced Digital Marketing — Government College of Technology (TEVTA) <span class="text-white/35 font-mono text-xs">02/2026</span></li>
+        <li>Computer Applications — Metal Industry Development Centre (TEVTA) <span class="text-white/35 font-mono text-xs">02/2023</span></li>
+        <li>Graphic Designing — Rahman Computer Institute (Al Rehman TTI) <span class="text-white/35 font-mono text-xs">09/2022</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact" class="border-t border-white/10 relative overflow-hidden">
+  <div class="mesh-blob w-[360px] h-[360px] bg-violet-500 -bottom-24 right-10"></div>
+  <div class="max-w-5xl mx-auto px-6 py-16 md:py-20 relative">
+    <p class="mono-tag text-cyan-300 uppercase mb-4">Get in touch</p>
+    <h2 class="font-display text-3xl md:text-5xl font-bold max-w-xl leading-tight text-white">
+      Open to <span class="gradient-text">Data Analyst</span> and <span class="gradient-text">Data Scientist</span> roles — let's talk.
+    </h2>
+
+    <div class="mt-10 flex flex-wrap gap-x-10 gap-y-4 text-sm text-white/70">
+      <a href="mailto:zakiulrehman.ds@gmail.com" class="hover:text-cyan-300 transition-colors">zakiulrehman.ds@gmail.com</a>
+      <a href="tel:+923353550015" class="hover:text-cyan-300 transition-colors">+92 335 3550015</a>
+      <a href="https://linkedin.com/in/zakiulrehman-ds" target="_blank" rel="noopener" class="hover:text-cyan-300 transition-colors">linkedin.com/in/zakiulrehman-ds</a>
+      <a href="https://github.com/zakiulrehman-ds" target="_blank" rel="noopener" class="hover:text-cyan-300 transition-colors">github.com/zakiulrehman-ds</a>
+    </div>
+
+    <p class="mt-16 text-xs text-white/30">© 2026 Zaki Ul Rehman. Sialkot, Punjab, Pakistan.</p>
+  </div>
+</footer>
+
+<script>
+$(function () {
+  $('#menuBtn').on('click', function () {
+    const expanded = $(this).attr('aria-expanded') === 'true';
+    $(this).attr('aria-expanded', String(!expanded));
+    $('#mobileMenu').slideToggle(150);
+    $('#menuIconOpen, #menuIconClose').toggleClass('hidden');
+  });
+
+  $('.mobile-link').on('click', function () {
+    $('#mobileMenu').slideUp(150);
+    $('#menuIconOpen, #menuIconClose').toggleClass('hidden');
+    $('#menuBtn').attr('aria-expanded', 'false');
+  });
+
+  $('.filter-btn').on('click', function () {
+    const filter = $(this).data('filter');
+    $('.filter-btn').removeClass('active');
+    $(this).addClass('active');
+
+    $('#projectGrid > *').each(function () {
+      const cat = $(this).data('cat');
+      if (filter === 'all' || cat === filter) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
+  const sections = $('section[id], footer[id]');
+  const navLinks = $('.nav-link');
+
+  $(window).on('scroll', function () {
+    let current = '';
+    sections.each(function () {
+      const top = $(this).offset().top - 100;
+      if ($(window).scrollTop() >= top) {
+        current = $(this).attr('id');
+      }
+    });
+    navLinks.removeClass('active');
+    navLinks.filter(`[href="#${current}"]`).addClass('active');
+  });
+});
+</script>
+
+</body>
+</html>
